@@ -1,0 +1,2 @@
+# adoNetPrj
+first trial project
