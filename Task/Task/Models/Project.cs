@@ -11,6 +11,6 @@ namespace Task.Models
         public int id { get; set; }
         [Required]
         public string Title { get; set; }
-        public ICollection<Task> Tasks { get; set; }
+        public ICollection<Tasks> Tasks { get; set; }
     }
 }

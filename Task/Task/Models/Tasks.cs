@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Task.Models
 {
-    public class Task
+    public class Tasks
     {
         public int id { get; set; }
         [Required]

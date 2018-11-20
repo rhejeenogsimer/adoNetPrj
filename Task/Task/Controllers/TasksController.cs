@@ -28,7 +28,7 @@ namespace Task.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task task = db.Tasks.Find(id);
+            Tasks task = db.Tasks.Find(id);
             if (task == null)
             {
                 return HttpNotFound();
@@ -37,6 +37,7 @@ namespace Task.Controllers
         }
 
         // GET: Tasks/Create
+
         public ActionResult Create()
         {
             ViewBag.ProjectId = new SelectList(db.Projects, "id", "Title");
@@ -48,7 +49,7 @@ namespace Task.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,Title,Complete,DueDate,ProjectId")] Task task)
+        public ActionResult Create(Tasks task)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +69,7 @@ namespace Task.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task task = db.Tasks.Find(id);
+            Tasks task = db.Tasks.Find(id);
             if (task == null)
             {
                 return HttpNotFound();
@@ -82,7 +83,7 @@ namespace Task.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,Title,Complete,DueDate,ProjectId")] Task task)
+        public ActionResult Edit(Tasks task)
         {
             if (ModelState.IsValid)
             {
@@ -101,7 +102,7 @@ namespace Task.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task task = db.Tasks.Find(id);
+            Tasks task = db.Tasks.Find(id);
             if (task == null)
             {
                 return HttpNotFound();
@@ -114,7 +115,7 @@ namespace Task.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Task task = db.Tasks.Find(id);
+            Tasks task = db.Tasks.Find(id);
             db.Tasks.Remove(task);
             db.SaveChanges();
             return RedirectToAction("Index");
