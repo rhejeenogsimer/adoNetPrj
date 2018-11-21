@@ -95,7 +95,7 @@ hr {
 }
 
 mark {
-  color: #000;
+  color:#FF7F50;
   background: #ff0;
 }
 
@@ -4501,8 +4501,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+    background-color: #2F4F4F;
+    border-color: #2F4F4F;
 }
 
 .navbar-inverse .navbar-brand {
